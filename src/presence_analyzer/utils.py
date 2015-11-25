@@ -11,6 +11,8 @@ from functools import wraps
 from datetime import datetime
 
 from flask import Response
+from lxml import etree
+from StringIO import StringIO
 
 from presence_analyzer.main import app
 
@@ -122,3 +124,11 @@ def mean_time_of_presence(items):
         result[day]['start'] = mean(result[day]['start'])
         result[day]['end'] = mean(result[day]['end'])
     return result
+
+
+def get_xml():
+    """
+    Get data from xml.
+    """
+    import ipdb; ipdb.set_trace()
+    tree = etree.parse('runtime/data/users.xml')
