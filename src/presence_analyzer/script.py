@@ -114,6 +114,7 @@ def run():
 
 
 def download_xml():
+    """Download users.xml from URL to runtime/data/ folder."""
     import urllib
 
     url = 'http://sargo.bolt.stxnext.pl/users.xml'
