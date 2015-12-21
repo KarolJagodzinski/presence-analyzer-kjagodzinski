@@ -111,3 +111,11 @@ def run():
         _serve('stop', dry_run=dry_run)
 
     werkzeug.script.run()
+
+
+def download_xml():
+    """Download users.xml from URL to runtime/data/ folder."""
+    import urllib
+
+    url = 'http://sargo.bolt.stxnext.pl/users.xml'
+    urllib.urlretrieve(url, 'runtime/data/users.xml')

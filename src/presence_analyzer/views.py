@@ -11,7 +11,7 @@ from mako.exceptions import TopLevelLookupException
 
 from presence_analyzer.main import app
 from presence_analyzer.utils import (
-    jsonify, get_data, mean, group_by_weekday, mean_time_of_presence
+    jsonify, get_data, mean, group_by_weekday, mean_time_of_presence, get_xml
 )
 
 
@@ -23,6 +23,7 @@ def template_for_url(template_file):
     """
     Render templates for url.
     """
+    get_xml()
     if not template_file.endswith('.html'):
         template_file = '{}.html'.format(template_file)
 
